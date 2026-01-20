@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://brown-bananas-build.loca.lt/api';
+const API_BASE_URL = 'https://balaji-kundapura-store.loca.lt/api';
 
 export const fetchProducts = async () => {
     const response = await fetch(`${API_BASE_URL}/products`, {
