@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const API_BASE_URL = 'https://public-phones-refuse.loca.lt/api';
 
 export const fetchProducts = async () => {
     const response = await fetch(`${API_BASE_URL}/products`);
