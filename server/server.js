@@ -6,7 +6,10 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    allowedHeaders: ['Content-Type', 'Authorization', 'Bypass-Tunnel-Reminder']
+}));
 app.use(express.json());
 
 // Serve static files from the React app

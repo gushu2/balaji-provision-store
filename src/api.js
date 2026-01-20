@@ -1,7 +1,11 @@
-const API_BASE_URL = 'https://public-phones-refuse.loca.lt/api';
+const API_BASE_URL = 'https://brown-bananas-build.loca.lt/api';
 
 export const fetchProducts = async () => {
-    const response = await fetch(`${API_BASE_URL}/products`);
+    const response = await fetch(`${API_BASE_URL}/products`, {
+        headers: {
+            'Bypass-Tunnel-Reminder': 'true'
+        }
+    });
     if (!response.ok) {
         throw new Error('Failed to fetch products');
     }
@@ -13,6 +17,7 @@ export const placeOrder = async (orderData) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Bypass-Tunnel-Reminder': 'true'
         },
         body: JSON.stringify(orderData),
     });
