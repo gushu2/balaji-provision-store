@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Professional Premium Background */
+    @apply bg-slate-50 text-slate-800 font-sans antialiased;
+
+    /* Subtle Mesh Gradient Background */
+    background:
+      radial-gradient(at 0% 0%, hsla(37, 90%, 93%, 1) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(210, 50%, 95%, 1) 0, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(37, 90%, 93%, 1) 0, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(210, 50%, 95%, 1) 0, transparent 50%),
+      #f8fafc;
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /* Playfair for elegance, Slate-900 for high contrast */
+    @apply font-serif text-slate-900 tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    /* Luxury Gold Gradient - Professional & Eye-catching */
+    @apply px-8 py-3 bg-gradient-to-r from-amber-600 to-yellow-500 text-white rounded-xl shadow-xl shadow-amber-500/20 hover:shadow-amber-500/40 hover:from-amber-700 hover:to-yellow-600 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 font-medium tracking-wide uppercase text-sm;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 bg-white/80 backdrop-blur-sm text-slate-700 border border-slate-200 rounded-xl hover:bg-white hover:border-amber-300 transition-all duration-300 font-medium tracking-wide uppercase text-sm hover:shadow-lg;
+  }
+
+  .card {
+    /* Clean, Professional Card with 'Floating' effect */
+    @apply bg-white rounded-2xl shadow-[0_8px_30px_rgb(0, 0, 0, 0.04)] overflow-hidden border border-slate-100 hover:shadow-[0_8px_30px_rgb(0, 0, 0, 0.08)] hover:border-amber-200/50 transition-all duration-500 group relative;
+  }
+
+  .glass-panel {
+    /* Premium Glassmorphism */
+    @apply bg-white/70 backdrop-blur-xl border border-white/50 shadow-2xl shadow-slate-200/50;
+  }
+
+  /* Elegant Divider */
+  .section-divider {
+    @apply flex items-center justify-center gap-4 my-8;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    @apply w-20 h-[1px] bg-gradient-to-r from-transparent via-slate-300 to-transparent;
+  }
+
+  /* Text Highlight - Gold */
+  .text-highlight {
+    @apply text-amber-600 font-medium relative inline-block;
+  }
+
+  /* Modern Section Title */
+  .section-title {
+    @apply text-4xl md:text-5xl font-serif font-bold text-slate-900 text-center mb-3;
+  }
+
+  .section-subtitle {
+    @apply text-slate-500 text-center font-medium mb-12 uppercase tracking-[0.3em] text-xs;
+  }
+
+  /* Image Hover Zoom Effect for Product Cards */
+  .card-image-container {
+    @apply overflow-hidden relative;
+  }
+
+  .card:hover .card-image-container img {
+    @apply scale-110;
+  }
+
+  .card-image-container img {
+    @apply transition-transform duration-700 ease-in-out;
+  }
+}
